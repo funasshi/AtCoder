@@ -25,7 +25,7 @@ def modinv(a, m):
 # modを考慮した組み合わせ
 # nCrを高速に出力
 # 上の２つが必要(egcd,modinv)
-def combination(n, r, mod=1 0 * * 9 + 7):
+def combination(n, r, mod=10 ** 9 + 7):
     r = min(r, n - r)
     res = 1
     for i in range(r):
