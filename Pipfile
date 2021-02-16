@@ -5,12 +5,11 @@ name = "pypi"
 
 [packages]
 numpy = "==1.18.2"
-flake8 = "*"
-wheel = "*"
+scipy = "==1.4.1"
 
 [dev-packages]
-autopep8 = "*"
 flake8 = "*"
+autopep8 = "*"
 
 [requires]
 python_version = "3.8"

@@ -4,36 +4,31 @@ t = input()
 n = len(s)
 m = len(t)
 
-sentou = -1
+
+def check(sentou):
+    for i in range(m):
+        if s[sentou+i] != t[i] and s[sentou+i] != '?':
+            return False
+    return True
 
 
-def func(s, t, i):
-    if i+m > n:
-        return False
-    check = 0
-    for j in range(i, i+m):
-        if s[j] == t[j-i] or s[j] == "?":
-            check += 1
-    if check == m:
-        return True
-    return False
-
-
-for i in range(n):
-    if func(s, t, i):
-        sentou = i
-
-ans = []
-if sentou == -1:
-    print("UNRESTORABLE")
-else:
-
+def make(sentou):
+    ans = list(s)
+    for i in range(m):
+        ans[sentou+i] = t[i]
     for i in range(n):
-        if i > sentou and i <= sentou+m:
-            ans.append(t[i-sentou])
-        else:
-            if s[i] == "?":
-                ans.append("a")
-            else:
-                ans.append(s[i])
-    print("".join(ans))
+        if ans[i] == '?':
+            ans[i] = 'a'
+    return ''.join(ans)
+
+
+ans_list = []
+for sentou in range(n-m+1):
+    if check(sentou):
+        ans_list.append(make(sentou))
+
+ans_list.sort()
+if len(ans_list) == 0:
+    print('UNRESTORABLE')
+else:
+    print(ans_list[0])
