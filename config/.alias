@@ -1,5 +1,5 @@
 # PyPy3でのテスト実施
-alias test='oj t -c pypy3 main.py -d ./tests/'"
+alias test='oj t -c "pypy3 main.py" -d ./tests/'
 # Pythonでのテスト実施
 alias test2='oj t -c "python3 main.py" -d ./tests/'
 
