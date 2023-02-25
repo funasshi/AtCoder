@@ -6,11 +6,14 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # インフラを整備
 RUN apt-get update && \
-    apt-get install -y zsh time tzdata tree git curl npm
+    apt-get install -y zsh time pypy3 tzdata tree git curl npm
 
 # デフォルトシェルをZ shellにする
 RUN chsh -s /bin/zsh
 
+# alias設定
+COPY config/.alias /root
+RUN cat /root/.alias >> /root/.zshrc
 # 一般的なコマンドで使えるように設定
 # e.g. python3.8 main.py => python main.py
 RUN echo 'alias python="python3"' >> ~/.zshrc
@@ -40,5 +43,3 @@ RUN poetry install
 RUN acc config default-task-choice all
 RUN acc config default-template python
 COPY config /root/.config/atcoder-cli-nodejs/
-COPY config/.alias /root
-RUN cat /root/.alias >> /root/.bashrc
