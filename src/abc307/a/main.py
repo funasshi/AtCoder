@@ -1,12 +1,14 @@
 # from scipy.sparse import csr_matrix
 import sys
+sys.setrecursionlimit(10**9)
 
-a, b = list(map(int, input().split()))
 
-if b-a==1 and b not in [1,4,7]:
-    print("Yes")
-else:
-    print("No")
+n = int(input())
+a_list = list(map(int, input().split()))
+ans=[]
+for i in range(n):
+    ans.append(sum(a_list[i*7:(i+1)*7]))
+print(*ans)    
 # n, m = list(map(int, input().split()))
 
 

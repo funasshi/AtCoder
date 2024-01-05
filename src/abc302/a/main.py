@@ -1,12 +1,18 @@
 # from scipy.sparse import csr_matrix
 import sys
+sys.setrecursionlimit(10**9)
+
 
 a, b = list(map(int, input().split()))
 
-if b-a==1 and b not in [1,4,7]:
-    print("Yes")
+shou=a//b
+
+
+if a-b*shou>0:
+    print(shou+1)
 else:
-    print("No")
+    print(shou)
+
 # n, m = list(map(int, input().split()))
 
 
