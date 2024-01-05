@@ -3,6 +3,5 @@
 /.vscode
 /__pycache__
 /abc＿緑.xlsx
-/src/*
 !/src/.keep
 !/src/module.py
