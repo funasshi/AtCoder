@@ -3,9 +3,12 @@ import sys
 sys.setrecursionlimit(10**9)
 
 
-n = int(input())
-a, b, c = list(map(int, input().split()))
-a_list = list(map(int, input().split()))
+a_list=input().split() 
+
+num="".join(a_list)
+binaryNum=num[::-1]
+
+print(int(binaryNum,2))
 
 # n, m = list(map(int, input().split()))
 

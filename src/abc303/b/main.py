@@ -3,9 +3,26 @@ import sys
 sys.setrecursionlimit(10**9)
 
 
-n = int(input())
-a, b, c = list(map(int, input().split()))
-a_list = list(map(int, input().split()))
+n, m = list(map(int, input().split()))
+jyunban_map=[]
+for i in range(m):
+    jyunban_map.append(list(map(lambda x:int(x)-1, input().split())))
+nakayoshi_list=[[0 for i in range(n)] for j in range(n)]
+
+for jyunban in jyunban_map:
+    for i in range(n-1):
+        one=jyunban[i]
+        two=jyunban[i+1]
+        if one>two:
+            one,two=two,one
+        nakayoshi_list[one][two]=1
+count=0
+for i in range(n-1):
+    for j in range(i+1,n):
+        if nakayoshi_list[i][j]==0:
+            count+=1
+
+print(count)
 
 # n, m = list(map(int, input().split()))
 

@@ -3,9 +3,20 @@ import sys
 sys.setrecursionlimit(10**9)
 
 
-n = int(input())
-a, b, c = list(map(int, input().split()))
-a_list = list(map(int, input().split()))
+p,q=input().split()
+
+haba=[3,1,4,1,5,9]
+alphabet="ABCDEFG"
+
+p=alphabet.index(p)
+q=alphabet.index(q)
+
+if p>q:
+    p,q=q,p
+    
+
+print(sum(haba[p:q]))
+
 
 # n, m = list(map(int, input().split()))
 

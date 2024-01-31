@@ -4,20 +4,18 @@ sys.setrecursionlimit(10**9)
 
 
 n = int(input())
-a, b, c = list(map(int, input().split()))
-a_list = list(map(int, input().split()))
 
-# n, m = list(map(int, input().split()))
-
-
-# row = []
-# col = []
-
-# for i in range(m):
-#     u, v = list(map(int, input().split()))
-#     row.append(u-1)
-#     col.append(v-1)
-
-# data = [1]*len(row)
-
-# matrix = csr_matrix((data, (row, col)), (n, n))
+if n<1000:
+    print(n)
+elif n<10000:
+    print(str(n)[:-1]+"0")
+elif n<100000:
+    print(str(n)[:-2]+"00")
+elif n<1000000:
+    print(str(n)[:-3]+"000")
+elif n<10000000:
+    print(str(n)[:-4]+"0000")
+elif n<100000000:
+    print(str(n)[:-5]+"00000")
+elif n<1000000000:
+    print(str(n)[:-6]+"000000")

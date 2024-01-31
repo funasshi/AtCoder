@@ -4,20 +4,28 @@ sys.setrecursionlimit(10**9)
 
 
 n = int(input())
-a, b, c = list(map(int, input().split()))
-a_list = list(map(int, input().split()))
+s=[]
 
-# n, m = list(map(int, input().split()))
+for i in range(n):
+    s.append(input())
+    
+def is_kaibun(s):
+    n=len(s)
+    for i in range(n//2):
+        if s[i]!=s[-i-1]:
+            return False
+    return True
 
+flag=0
+for i in range(n):
+    for j in range(n):
+        if i==j:
+            continue
+        if is_kaibun(s[i]+s[j]):
+            flag=1
 
-# row = []
-# col = []
+if flag==1:
+    print("Yes")
+else:
+    print("No")
 
-# for i in range(m):
-#     u, v = list(map(int, input().split()))
-#     row.append(u-1)
-#     col.append(v-1)
-
-# data = [1]*len(row)
-
-# matrix = csr_matrix((data, (row, col)), (n, n))

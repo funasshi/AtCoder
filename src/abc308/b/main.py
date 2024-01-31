@@ -3,9 +3,19 @@ import sys
 sys.setrecursionlimit(10**9)
 
 
-n = int(input())
-a, b, c = list(map(int, input().split()))
-a_list = list(map(int, input().split()))
+n,m= list(map(int, input().split()))
+c_list = input().split()
+d_list = input().split()
+p_list = list(map(int, input().split()))
+ans=0
+for color in c_list:
+    if color in d_list:
+        ans+=p_list[d_list.index(color)+1]
+    else:
+        ans+=p_list[0]
+
+print(ans)
+
 
 # n, m = list(map(int, input().split()))
 
