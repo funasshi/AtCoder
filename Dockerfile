@@ -1,4 +1,4 @@
-FROM python:3.8.2
+FROM python:3.11.4
 
 # タイムゾーンを日本に設定
 ENV TZ=Asia/Tokyo
@@ -37,7 +37,7 @@ RUN echo '\n\
 
 RUN npm install -g atcoder-cli
 RUN pip install -U pip
-RUN poetry install
+RUN poetry install --no-root
 
 # accの設定
 RUN acc config default-task-choice all
